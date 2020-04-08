@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/main.css">
+    <title>Critical</title>
+    <script
+        src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+        crossorigin="anonymous">
+    </script>   
+</head>
+<body>
+
+    <h1>Критические значения параметров метеорологических явлений</h1>
+
+    <div class='marginContainer'>
+
+        <p>
+            Сами по себе атмосферные осадки и изменения температур не несут опасности, 
+                значение имеет то, насколько они могут усилиться. Когда мелкий дождь становится 
+                затяжным или превращается в сильный дождь (ливень), возникает опасность подтопления. 
+                Усиление, поначалу легкого ветерка до шквалистого ветра повышает вероятность обрыва 
+                проводов. То же относится и к другим метеорологическим явлениям. С помощью переключателя 
+                «усильте» то или иное явление природы и посмотрите, при каких критических параметрах оно 
+                становятся опасным.<br> <span>*Сдвиньте переключатель под иконкой, чтобы увидеть критические параметры.</span>
+        </p>
+
+        <div class='parameterContainer'>
+            <div class='parameterContainer_card'>
+                <div class='correction'>
+                    <p id='hatWind' class='card__gray'>Ветер</p>
+                    <p id='onHatWind' class='card_red hide'>Сильный ветер (шквалистый)</p>
+                    <img id='offWind' src="./img/1_off.png" alt="WIND">
+                    <img id='onWind' class='hide' src="./img/1_on.png" alt="WIND">
+                    <div id='onTextWind' class='mrg invis'>
+                        Скорость порывов от 25м/c и более. 
+                    </div>
+                </div>
+                <div id='buttonWind' class="button"></div>
+            </div>
+
+            <div class='parameterContainer_card_margin'>
+                <div class='correction'>
+                    <p id='hatRain' class='card__gray'>Дождь</p>
+                    <p id='onHatRain' class='card_red hide'>Сильный дождь (ливень)</p>
+                    <img id='offRain' src="./img/2_off.png" alt="RAIN">
+                    <img id='onRain'  class='hide' src="./img/2_on.png" alt="WIND">
+                    <div id='onTextRain' class='mrg invis'>
+                        Кол-во осадков 100 мм и более, в период менее чем за 12 часов.  
+                    </div>
+                </div>
+                <div id='buttonRain' class="button"></div>
+            </div>
+            
+            <div class='parameterContainer_card_margin'>
+                <div class='correction'>
+                    <p id='hatSnow' class='card__gray'>Снег</p>
+                    <p id='onHatSnow' class='card_red hide'>Сильный <br>снег</p>
+                    <img id='offSnow' src="./img/3_off.png" alt="SNOW">
+                    <img id='onSnow' class='hide' src="./img/3_on.png" alt="WIND">
+                    <div id='onTextSnow' class='mrg invis'>
+                        Кол-во осадков 20 мм и более, в период менее чем за 12 часов.
+                    </div>
+                </div>
+                <div id='buttonSnow' class="button"></div>
+            </div>
+            
+            <div class='parameterContainer_card_margin'>
+                <div class='correction'>
+                    <p id='hatBliz' class='card__gray'>Метель</p>
+                    <p id='onHatBliz' class='card_red hide'>Сильная <br>метель</p>
+                    <img id='offBliz' src="./img/4_off.png" alt="BLIZ">
+                    <img id='onBliz' class='hide' src="./img/4_on.png" alt="BLIZ">
+                    <div id='onTextBliz' class='mrg invis'>
+                        При ветре 20 м/c в течение суток с выпадением снега.
+                    </div>
+                </div>
+                <div id='buttonBliz' class="button"></div>
+            </div>
+            
+            <div class='parameterContainer_card_margin'>
+                <div>
+                    <p id='hatHSnow' class='card__gray'>Град</p>
+                    <p id='onHatHSnow' class='card_red hide'>Крупный <br>град</p>
+                    <img id='offHSnow' src="./img/5_off.png" alt="HSNOW">
+                    <img id='onHSnow' class='hide' src="./img/5_on.png" alt="HSNOW">
+                    <div id='onTextHSnow' class='mrg invis'>
+                        Диаметр градин 20 мм и более.
+                    </div>
+                </div>
+                <div id='buttonHSnow' class="button"></div>
+            </div>
+            
+            <div class='parameterContainer_card_margin'>
+                <div>
+                    <p id='hatIce' class='card__gray'>Гололед</p>
+                    <p id='onHatIce' class='card_red hide'>Сильный гололед</p>
+                    <img id='offIce' src="./img/6_off.png" alt="ICE">
+                    <img id='onIce' class='hide' src="./img/6_on.png" alt="ICE">
+                    <div id='onTextIce' class='mrg invis'>
+                        Диаметр отложений на проводах 20 мм и более.
+                    </div>
+                </div>
+                <div id='buttonIce' class="button"></div>
+            </div>
+            
+            <div class='parameterContainer_card_margin'>
+                <div>
+                    <p id='hatFrost' class='card__gray'>Мороз</p>
+                    <img id='offFrost' src="./img/7_off.png" alt="FROST">
+                    <p id='onHatFrost' class='card_red hide'>Сильный <br>мороз</p>
+                    <img id='onFrost' class='hide' src="./img/7_on.png" alt="FROST">
+                    <div id='onTextFrost' class='mrg invis'>
+                        Температура воздуха у поверхности земли - 30°C и ниже для Европейской части РФ. 
+                    </div>
+                </div>
+                <div id='buttonFrost' class="button"></div>
+            </div>
+        </div>
+    </div>
+<script src="./js/index.js"></script>
+
+</body>
+</html>
